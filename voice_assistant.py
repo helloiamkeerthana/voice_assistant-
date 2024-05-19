@@ -8,7 +8,7 @@ import pyaudio
 import wave
 
 # OpenAI GPT-3 API Key
-openai.api_key = 'sk-proj-A3dAVJUJU5ZNGFmqtDdYT3BlbkFJVROoF5TMYfcnJoKdyKoy'
+openai.api_key = 'Enter api'
 
 # IBM Watson Text to Speech
 tts_authenticator = IAMAuthenticator('KUOJmw4305bJMeQ0ZpOEPYyn-8gakEDD19mOsRHJ2K6Z')
