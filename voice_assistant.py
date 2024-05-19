@@ -9,8 +9,7 @@ import wave
 from dotenv import load_dotenv
 import os
 
-
-
+#call APIs
 load_dotenv()
 # OpenAI GPT-3 API Key
 openai.api_key =  os.getenv('OPENAI_API_KEY')
