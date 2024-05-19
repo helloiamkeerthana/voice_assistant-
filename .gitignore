@@ -135,3 +135,5 @@ response.wav
 
 # API keys and credentials (example)
 api_keys.py
+
+.env

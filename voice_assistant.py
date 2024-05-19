@@ -5,20 +5,23 @@ from ibm_watson import TextToSpeechV1
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import pyaudio
+from dotenv import load_dotenv
 import wave
+import os
 
+load_dotenv()
 # OpenAI GPT-3 API Key
-openai.api_key = 'Enter api'
+openai.api_key =  os.getenv('OPENAI_API_KEY')
 
 # IBM Watson Text to Speech
-tts_authenticator = IAMAuthenticator('KUOJmw4305bJMeQ0ZpOEPYyn-8gakEDD19mOsRHJ2K6Z')
+tts_authenticator = IAMAuthenticator(os.getenv('IBM_TTS_API_KEY'))
 text_to_speech = TextToSpeechV1(authenticator=tts_authenticator)
-text_to_speech.set_service_url('https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/83e04dcf-07c6-4bd5-bd0f-c15f890e169f')
+text_to_speech.set_service_url(os.getenv('IBM_TTS_UR'))
 
 # IBM Watson Speech to Text
-stt_authenticator = IAMAuthenticator('uguHWYx5mrhxXpFyOT2oFyZH1w50C0xl9-6mu1gj52U3')
+stt_authenticator = IAMAuthenticator(os.getenv('IBM_STT_API_KEY'))
 speech_to_text = SpeechToTextV1(authenticator=stt_authenticator)
-speech_to_text.set_service_url('https://api.au-syd.speech-to-text.watson.cloud.ibm.com/instances/129f9103-7dc2-4ee7-a968-e97a869a66b4')
+speech_to_text.set_service_url(os.getenv('IBM_STT_URL'))
 
 def recognize_speech():
     recognizer = sr.Recognizer()
