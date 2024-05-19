@@ -5,10 +5,9 @@ from ibm_watson import TextToSpeechV1
 from ibm_watson import SpeechToTextV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import pyaudio
-from dotenv import load_dotenv
 import wave
+from dotenv import load_dotenv
 import os
-
 
 
 
